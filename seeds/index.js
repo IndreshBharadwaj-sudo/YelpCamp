@@ -23,7 +23,12 @@ const img = [{ filename: 'YelpCamp/wqn3xk8x5trxqmum3qgm.jpg', url: 'https://res.
              { filename: 'YelpCamp/jnz8vdgryg3wuep5hown.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621402721/YelpCamp/jnz8vdgryg3wuep5hown.jpg' },
              { filename: 'YelpCamp/mtkgvj6gcldxwfxmu5jo.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621405054/YelpCamp/mtkgvj6gcldxwfxmu5jo.jpg' },
              { filename: 'YelpCamp/jjcav0nenfhrz2pgusuz.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621341313/YelpCamp/jjcav0nenfhrz2pgusuz.jpg' },
-             { filename: 'YelpCamp/lbgdaykkzlcskshmzmp1.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621341312/YelpCamp/lbgdaykkzlcskshmzmp1.jpg' }
+             { filename: 'YelpCamp/lbgdaykkzlcskshmzmp1.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621341312/YelpCamp/lbgdaykkzlcskshmzmp1.jpg' },
+             { filename: 'YelpCamp/sk3at61i5ibvdrpzewsn.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621458149/YelpCamp/sk3at61i5ibvdrpzewsn.jpg' },
+             { filename: 'YelpCamp/g0cz6h7vpeatvxlcmghb.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621458149/YelpCamp/g0cz6h7vpeatvxlcmghb.jpg' },
+             { filename: 'YelpCamp/jq8ugvtpjan9dsg8yr8t.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621458150/YelpCamp/jq8ugvtpjan9dsg8yr8t.jpg' },
+             { filename: 'YelpCamp/w9c2n1oj7rtpfdkfscmd.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621458150/YelpCamp/w9c2n1oj7rtpfdkfscmd.jpg' },
+             { filename: 'YelpCamp/jugrmgvbm2qlcelrbdil.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621458149/YelpCamp/jugrmgvbm2qlcelrbdil.jpg' }
 
 ]
 
@@ -31,8 +36,8 @@ const seedDB = async () => {
     await Campground.deleteMany({});
     for (let i = 0; i < 200; i++)
     {
-        var z = i % 5;
-        var z1 = i % 5;
+        var z = Math.floor(Math.random() * 10);
+        var z1 = Math.floor(Math.random() * 10);
         const random1000 = Math.floor(Math.random() * 1000);
         const price=Math.floor(Math.random() * 20)+10;
         const camp = new Campground({

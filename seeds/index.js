@@ -19,10 +19,20 @@ db.once("open", () => {
 });
 
 const sample = array => array[Math.floor(Math.random() * array.length)]
+const img = [{ filename: 'YelpCamp/wqn3xk8x5trxqmum3qgm.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621423229/YelpCamp/wqn3xk8x5trxqmum3qgm.jpg' },
+             { filename: 'YelpCamp/jnz8vdgryg3wuep5hown.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621402721/YelpCamp/jnz8vdgryg3wuep5hown.jpg' },
+             { filename: 'YelpCamp/mtkgvj6gcldxwfxmu5jo.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621405054/YelpCamp/mtkgvj6gcldxwfxmu5jo.jpg' },
+             { filename: 'YelpCamp/jjcav0nenfhrz2pgusuz.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621341313/YelpCamp/jjcav0nenfhrz2pgusuz.jpg' },
+             { filename: 'YelpCamp/lbgdaykkzlcskshmzmp1.jpg', url: 'https://res.cloudinary.com/indresh/image/upload/v1621341312/YelpCamp/lbgdaykkzlcskshmzmp1.jpg' }
+
+]
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 200; i++)
+    {
+        var z = i % 5;
+        var z1 = i % 5;
         const random1000 = Math.floor(Math.random() * 1000);
         const price=Math.floor(Math.random() * 20)+10;
         const camp = new Campground({
@@ -36,15 +46,7 @@ const seedDB = async () => {
                     cities[random1000].latitude
                 ]
             },
-            images: [{
-                    filename: 'YelpCamp/wqn3xk8x5trxqmum3qgm.jpg',
-                    url: 'https://res.cloudinary.com/indresh/image/upload/v1621423229/YelpCamp/wqn3xk8x5trxqmum3qgm.jpg'
-            },
-                {
-                filename: 'YelpCamp/jnz8vdgryg3wuep5hown.jpg',
-                url: 'https://res.cloudinary.com/indresh/image/upload/v1621402721/YelpCamp/jnz8vdgryg3wuep5hown.jpg'
-            }
-            ],
+            images: [img[z],img[z1]],
             des: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi repellat harum, aspernatur dolores tempora.',
             price: price
         })

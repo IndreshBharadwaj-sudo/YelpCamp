@@ -34,7 +34,7 @@ const img = [{ filename: 'YelpCamp/wqn3xk8x5trxqmum3qgm.jpg', url: 'https://res.
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 200; i++)
+    for (let i = 0; i < 1000; i++)
     {
         var z = Math.floor(Math.random() * 10);
         var z1 = Math.floor(Math.random() * 10);
